@@ -203,6 +203,224 @@ body::after {
 .petal-6 { top: -20px; left: 80%; animation: petalFall2 9.5s linear -3s infinite; }
 .petal-7 { top: -20px; left: 92%; animation: petalFall 10.5s linear -6s infinite; }
 
+/* ===== 宋式庭院核心要素 ===== */
+.garden { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+
+/* --- 歇山亭（右上） --- */
+.pavilion { position: absolute; right: 10%; top: 12%; z-index: 0; }
+.pav-roof {
+  width: 0; height: 0;
+  border-left: 62px solid transparent;
+  border-right: 62px solid transparent;
+  border-bottom: 36px solid #5a3d2e;
+  position: relative; left: -12px;
+}
+.pav-roof::after {
+  content: ''; position: absolute; top: 20px; left: -52px;
+  width: 0; height: 0;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+  border-bottom: 20px solid #4a3025;
+}
+.pav-eaves-l, .pav-eaves-r {
+  position: absolute; top: 4px; width: 18px; height: 8px;
+  background: #5a3d2e; border-radius: 0 0 6px 6px;
+}
+.pav-eaves-l { left: -24px; transform: rotate(-30deg); }
+.pav-eaves-r { right: -24px; transform: rotate(30deg); }
+.pav-ridge {
+  position: absolute; top: -4px; left: -4px; right: -4px; height: 6px;
+  background: #3a2215; border-radius: 3px 3px 0 0;
+}
+.pav-body {
+  width: 100px; height: 52px; position: relative; left: -50px;
+  background: linear-gradient(to bottom, #8b7355, #6b5340 40%, #5c3d2a);
+  border-radius: 2px;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.06), 0 2px 8px rgba(0,0,0,0.3);
+}
+.pav-pillar {
+  position: absolute; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(to right, #5a3520, #7a5540, #5a3520);
+  border-radius: 1px;
+}
+.pav-window {
+  position: absolute; top: 8px; left: 16px; right: 16px; height: 28px;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255,255,240,0.1) 3px, rgba(255,255,240,0.1) 4px),
+    repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(255,255,240,0.1) 3px, rgba(255,255,240,0.1) 4px),
+    rgba(255,245,220,0.6);
+  border: 2px solid #5a3d2e; border-radius: 2px;
+}
+.pav-base {
+  width: 108px; height: 6px; position: relative; left: -54px;
+  background: #4a3528; border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* --- 灯笼 --- */
+.lantern {
+  position: absolute; z-index: 0; width: 8px; height: 16px;
+  background: radial-gradient(ellipse at center, #e84030, #9b1b1b);
+  border-radius: 4px; top: 8%;
+  box-shadow: 0 0 8px rgba(220,60,30,0.5), 0 0 2px rgba(255,200,100,0.6);
+  animation: lanternSwing 4s ease-in-out infinite;
+}
+.lantern-l { right: 16%; }
+.lantern-r { right: 7.5%; }
+@keyframes lanternSwing {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+.lantern::before {
+  content: ''; position: absolute; top: -8px; left: 50%;
+  width: 1px; height: 8px; background: #8b7355;
+}
+
+/* --- 松树（左上） --- */
+.pine { position: absolute; left: 6%; top: 8%; z-index: 0; }
+.pine-trunk {
+  width: 8px; height: 80px;
+  background: linear-gradient(to right, #5a3d20, #8b6540, #5a3d20);
+  border-radius: 2px 2px 0 0;
+  position: relative; left: 46px; top: 40px;
+}
+.pine-crown {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(ellipse at 40% 35%, #5a7a3a, #2d5020);
+  box-shadow: inset 0 -4px 8px rgba(0,0,0,0.15);
+}
+.crown-1 { width: 56px; height: 56px; left: 22px; top: 16px; }
+.crown-2 { width: 48px; height: 48px; left: 14px; top: 40px; }
+.crown-3 { width: 60px; height: 52px; left: 16px; top: -4px; }
+
+/* --- 太湖石（中右） --- */
+.rock {
+  position: absolute; z-index: 0;
+  background: radial-gradient(ellipse at 35% 30%, #c8c0b0, #8a8070);
+  box-shadow: inset 0 -4px 8px rgba(0,0,0,0.2), 0 3px 8px rgba(0,0,0,0.25);
+}
+.rock-1 {
+  right: 8%; top: 55%; width: 52px; height: 64px;
+  border-radius: 40% 60% 50% 50% / 45% 45% 55% 55%;
+}
+.rock-2 {
+  right: 13%; top: 60%; width: 36px; height: 44px;
+  border-radius: 50% 40% 55% 45% / 40% 55% 45% 60%;
+}
+.rock-3 {
+  right: 5%; top: 62%; width: 28px; height: 36px;
+  border-radius: 45% 55% 40% 60% / 55% 40% 60% 45%;
+}
+.rock::after {
+  content: ''; position: absolute; width: 30%; height: 25%;
+  background: rgba(100,90,80,0.4); border-radius: 50%;
+  top: 20%; left: 35%;
+}
+
+/* --- 修竹（左缘） --- */
+.bamboo {
+  position: absolute; left: 2%; z-index: 0;
+  width: 4px; background: linear-gradient(to right, #3a6a2a, #5a8a40, #3a6a2a);
+  border-radius: 2px;
+}
+.bamboo::after {
+  content: ''; position: absolute; bottom: 100%; left: -5px;
+  width: 14px; height: 20px;
+  background: radial-gradient(ellipse at 50% 100%, #4a7a30, transparent 70%);
+  clip-path: polygon(50% 0%, 0% 100%, 35% 80%, 50% 100%, 65% 80%, 100% 100%);
+}
+.bam-1 { height: 120px; top: 8%; }
+.bam-2 { height: 140px; top: 4%; left: 3.5%; }
+.bam-3 { height: 100px; top: 12%; left: 5%; }
+.bam-4 { height: 130px; top: 2%; left: 6.5%; }
+
+/* --- 石桌石凳 --- */
+.stone-table {
+  position: absolute; right: 24%; top: 48%; z-index: 0;
+  width: 36px; height: 18px;
+  background: radial-gradient(ellipse at center, #c8c0b0, #a09888);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.stool {
+  position: absolute; width: 10px; height: 10px;
+  background: radial-gradient(circle at 40% 35%, #d0c8b8, #a09888);
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* --- 曲径 --- */
+.path, .path-curve {
+  position: absolute; z-index: 0;
+  background:
+    radial-gradient(circle 4px, rgba(160,150,130,0.35) 30%, transparent 70%),
+    radial-gradient(circle 6px at 25% 60%, rgba(160,150,130,0.25) 30%, transparent 70%);
+}
+.path {
+  right: 10%; top: 52%; width: 80px; height: 22px;
+  border-radius: 0 0 16px 16px;
+}
+.path-curve {
+  right: 16%; top: 55%; width: 60px; height: 16px;
+  border-radius: 10px 10px 0 0;
+}
+
+/* --- 荷花 --- */
+.lotus {
+  position: absolute; z-index: 0; bottom: 6%;
+  width: 26px; height: 14px;
+  background: radial-gradient(ellipse at center, #5a8a3a, #2d6020);
+  border-radius: 50% 50% 50% 10% / 50% 50% 20% 20%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.lotus-l1 { left: 14%; }
+.lotus-l2 { left: 32%; bottom: 7%; }
+.lotus-l3 { right: 30%; }
+.lotus-flower {
+  position: absolute; z-index: 0; bottom: 9%; left: 30%;
+  width: 16px; height: 10px;
+  background: radial-gradient(ellipse at 50% 35%, #f8c0c8, #e89098);
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  box-shadow: 0 0 4px rgba(220,140,150,0.4);
+}
+.lotus-flower::before {
+  content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 8px solid #f0b0b8;
+}
+
+/* --- 汀步 --- */
+.stepping {
+  position: absolute; z-index: 0; bottom: 3%;
+  width: 16px; height: 8px;
+  background: linear-gradient(to bottom, #c8c0b5, #a09888);
+  border-radius: 40%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+.s1 { left: 40%; }
+.s2 { left: 46%; bottom: 4%; }
+.s3 { left: 52%; }
+.s4 { left: 58%; bottom: 4%; }
+
+/* --- 小桥 --- */
+.bridge {
+  position: absolute; z-index: 0; bottom: 5%; left: 42%;
+  width: 44px; height: 14px;
+  border: 2px solid #8b7355;
+  border-bottom: none;
+  border-radius: 50% 50% 0 0;
+  background: rgba(180,160,130,0.3);
+}
+.bridge::before {
+  content: ''; position: absolute; bottom: 0; left: -2px; right: -2px; height: 2px;
+  background: #8b7355;
+}
+
+/* 移除旧的 pavilion 样式冲突 */
+.atmosphere { display: none; }
+
 /* ===== 标题 ===== */
 .header { text-align: center; padding-top: 8px; }
 .header h1 {
@@ -468,25 +686,89 @@ body::after {
 </head>
 <body>
 
-<div class="atmosphere">
+<div class="garden">
+  <!-- 云雾 -->
   <div class="mist mist-1"></div>
   <div class="mist mist-2"></div>
   <div class="mist mist-3"></div>
+  <!-- 天象 -->
+  <div class="sun"></div>
+  <div class="bird bird-1"></div>
+  <div class="bird bird-2"></div>
+  <!-- 落花 -->
+  <div class="petal petal-1"></div>
+  <div class="petal petal-2"></div>
+  <div class="petal petal-3"></div>
+  <div class="petal petal-4"></div>
+  <div class="petal petal-5"></div>
+  <div class="petal petal-6"></div>
+  <div class="petal petal-7"></div>
+
+  <!-- 松树——左上 -->
+  <div class="pine">
+    <div class="pine-trunk"></div>
+    <div class="pine-crown crown-1"></div>
+    <div class="pine-crown crown-2"></div>
+    <div class="pine-crown crown-3"></div>
+  </div>
+
+  <!-- 歇山亭——右上 -->
+  <div class="pavilion">
+    <div class="pav-roof"></div>
+    <div class="pav-eaves-l"></div>
+    <div class="pav-eaves-r"></div>
+    <div class="pav-ridge"></div>
+    <div class="pav-body">
+      <div class="pav-pillar" style="left:8px;"></div>
+      <div class="pav-pillar" style="right:8px;"></div>
+      <div class="pav-window"></div>
+    </div>
+    <div class="pav-base"></div>
+  </div>
+
+  <!-- 灯笼——亭檐下 -->
+  <div class="lantern lantern-l"></div>
+  <div class="lantern lantern-r"></div>
+
+  <!-- 太湖石——中右水岸 -->
+  <div class="rock rock-1"></div>
+  <div class="rock rock-2"></div>
+  <div class="rock rock-3"></div>
+
+  <!-- 修竹——左缘 -->
+  <div class="bamboo bam-1"></div>
+  <div class="bamboo bam-2"></div>
+  <div class="bamboo bam-3"></div>
+  <div class="bamboo bam-4"></div>
+
+  <!-- 石桌石凳——亭旁 -->
+  <div class="stone-table">
+    <div class="stool" style="left:-18px;top:6px;"></div>
+    <div class="stool" style="right:-14px;top:8px;"></div>
+    <div class="stool" style="left:4px;bottom:-14px;"></div>
+  </div>
+
+  <!-- 曲径 -->
+  <div class="path"></div>
+  <div class="path-curve"></div>
+
+  <!-- 水面+荷花+汀步+小桥 -->
+  <div class="water-surface"></div>
+  <div class="lotus lotus-l1"></div>
+  <div class="lotus lotus-l2"></div>
+  <div class="lotus lotus-l3"></div>
+  <div class="lotus-flower"></div>
+  <div class="stepping s1"></div>
+  <div class="stepping s2"></div>
+  <div class="stepping s3"></div>
+  <div class="stepping s4"></div>
+  <div class="bridge"></div>
+
+  <!-- 香炉+光影 -->
+  <div class="incense"></div>
+  <div class="dappled-light"></div>
+  <div class="rain-layer" id="rainLayer"></div>
 </div>
-<div class="sun"></div>
-<div class="bird bird-1"></div>
-<div class="bird bird-2"></div>
-<div class="petal petal-1"></div>
-<div class="petal petal-2"></div>
-<div class="petal petal-3"></div>
-<div class="petal petal-4"></div>
-<div class="petal petal-5"></div>
-<div class="petal petal-6"></div>
-<div class="petal petal-7"></div>
-<div class="water-surface"></div>
-<div class="incense"></div>
-<div class="dappled-light"></div>
-<div class="rain-layer" id="rainLayer"></div>
 
 <div class="container">
   <div class="header">
