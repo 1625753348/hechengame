@@ -34,27 +34,33 @@ body {
   user-select: none; -webkit-user-select: none;
   padding: 16px;
   color: var(--ink);
-  background-color: #c8d8e0;
+  background-color: #b8ccd8;
   background-image:
-    radial-gradient(ellipse 80% 18% at 20% 22%, rgba(140,170,190,0.7) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 14% at 60% 24%, rgba(150,180,195,0.65) 0%, transparent 70%),
-    radial-gradient(ellipse 70% 12% at 85% 26%, rgba(135,165,185,0.55) 0%, transparent 65%),
-    radial-gradient(ellipse 90% 22% at 10% 92%, #7a9a7a 0%, transparent 58%),
-    radial-gradient(ellipse 85% 20% at 30% 88%, #8a9e7a 0%, transparent 55%),
-    radial-gradient(ellipse 95% 24% at 50% 90%, #7d9570 0%, transparent 56%),
-    radial-gradient(ellipse 80% 18% at 70% 87%, #859a78 0%, transparent 54%),
-    radial-gradient(ellipse 100% 20% at 90% 91%, #789068 0%, transparent 58%),
-    radial-gradient(ellipse 40% 16% at 12% 95%, #5a7a50 0%, transparent 52%),
-    radial-gradient(ellipse 35% 14% at 38% 94%, #6a8a58 0%, transparent 50%),
-    radial-gradient(ellipse 45% 15% at 58% 96%, #5d7d4d 0%, transparent 53%),
-    radial-gradient(ellipse 30% 12% at 78% 93%, #688058 0%, transparent 48%),
-    radial-gradient(ellipse 160% 10% at 50% 58%, rgba(255,255,255,0.5) 0%, transparent 65%),
-    radial-gradient(ellipse 120% 8% at 35% 52%, rgba(255,255,255,0.35) 0%, transparent 60%),
-    radial-gradient(ellipse 100% 6% at 65% 54%, rgba(255,255,255,0.35) 0%, transparent 58%),
-    radial-gradient(ellipse 200% 20% at 50% 78%, rgba(240,230,200,0.6) 0%, transparent 55%),
+    /* 远山——淡青远峰 */
+    radial-gradient(ellipse 70% 16% at 18% 20%, rgba(130,160,180,0.8) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 12% at 58% 22%, rgba(140,170,190,0.75) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 10% at 82% 24%, rgba(125,155,175,0.65) 0%, transparent 60%),
+    /* 中景山峦——青绿山体 */
+    radial-gradient(ellipse 80% 20% at 8% 91%, #6d8e6d 0%, transparent 55%),
+    radial-gradient(ellipse 75% 18% at 28% 87%, #7d9470 0%, transparent 52%),
+    radial-gradient(ellipse 85% 22% at 50% 89%, #708a65 0%, transparent 53%),
+    radial-gradient(ellipse 72% 16% at 68% 86%, #78906e 0%, transparent 50%),
+    radial-gradient(ellipse 90% 18% at 88% 90%, #6c845e 0%, transparent 55%),
+    /* 近处山林——深绿松柏 */
+    radial-gradient(ellipse 35% 14% at 10% 94%, #4d7040 0%, transparent 48%),
+    radial-gradient(ellipse 30% 12% at 36% 93%, #5c7c4a 0%, transparent 46%),
+    radial-gradient(ellipse 40% 13% at 56% 95%, #4a6e3d 0%, transparent 50%),
+    radial-gradient(ellipse 28% 10% at 76% 92%, #567848 0%, transparent 44%),
+    /* 云雾——山间白雾 */
+    radial-gradient(ellipse 150% 9% at 50% 56%, rgba(255,255,255,0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 110% 7% at 32% 50%, rgba(255,255,255,0.3) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 6% at 68% 52%, rgba(255,255,255,0.3) 0%, transparent 55%),
+    /* 前景——庭院地面 */
+    radial-gradient(ellipse 180% 18% at 50% 76%, rgba(235,225,195,0.55) 0%, transparent 50%),
+    /* 天空 */
     linear-gradient(to bottom,
-      #d8e8f0 0%, #d5e2e8 15%, #e0e0d0 28%, #e8e0d0 40%,
-      #e8dcc8 55%, #e0d5c0 70%, #d8ccb0 85%, #c8bc98 100%);
+      #c8dce8 0%, #c5d8e0 12%, #d8dcc8 26%, #e4dcc8 38%,
+      #e4d8c0 52%, #dcd0b8 68%, #d4c8a8 82%, #c4b890 100%);
   background-attachment: fixed;
 }
 
@@ -90,43 +96,43 @@ body::after {
 .atmosphere { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
 .mist {
   position: absolute; width: 220%; height: 35%;
-  background: radial-gradient(ellipse 50% 80% at center, rgba(255,255,255,0.14) 0%, transparent 70%);
-  filter: blur(28px);
+  background: radial-gradient(ellipse 50% 80% at center, rgba(255,255,255,0.35) 0%, transparent 70%);
+  filter: blur(24px);
 }
-.mist-1 { top: 6%;  animation: mistDrift1 28s ease-in-out infinite alternate; }
-.mist-2 { top: 16%; animation: mistDrift2 35s ease-in-out infinite alternate; height: 28%; }
-.mist-3 { top: 28%; animation: mistDrift3 42s ease-in-out infinite alternate; height: 22%; }
+.mist-1 { top: 4%;  animation: mistDrift1 28s ease-in-out infinite alternate; }
+.mist-2 { top: 14%; animation: mistDrift2 35s ease-in-out infinite alternate; height: 28%; }
+.mist-3 { top: 26%; animation: mistDrift3 42s ease-in-out infinite alternate; height: 24%; }
 
 /* 水面微澜 */
 @keyframes waterShimmer { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
 .water-surface {
-  position: fixed; left: 0; right: 0; bottom: 0; height: 70px; z-index: 0; pointer-events: none;
+  position: fixed; left: 0; right: 0; bottom: 0; height: 80px; z-index: 0; pointer-events: none;
   background:
-    repeating-linear-gradient(0deg, rgba(180,200,215,0.12) 0px, rgba(180,200,215,0.12) 1px, transparent 1px, transparent 4px),
-    radial-gradient(ellipse 140% 100% at 25% 100%, rgba(195,215,225,0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 110% 80% at 70% 100%, rgba(195,215,225,0.13) 0%, transparent 55%);
-  animation: waterShimmer 12s linear infinite;
+    repeating-linear-gradient(0deg, rgba(160,190,210,0.2) 0px, rgba(160,190,210,0.2) 1px, transparent 1px, transparent 3px),
+    radial-gradient(ellipse 150% 100% at 22% 100%, rgba(180,205,220,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 120% 80% at 72% 100%, rgba(180,205,220,0.2) 0%, transparent 55%);
+  animation: waterShimmer 10s linear infinite;
 }
 
 /* 香烟袅袅 */
 @keyframes incense1 { 0% { transform: translateY(0) scaleX(1); opacity: 0.45; } 50% { opacity: 0.6; } 100% { transform: translateY(-30px) scaleX(0.15); opacity: 0; } }
 @keyframes incense2 { 0% { transform: translateY(0) scaleX(1.1); opacity: 0.35; } 60% { opacity: 0.45; } 100% { transform: translateY(-25px) scaleX(0.1); opacity: 0; } }
-.incense { position: fixed; top: 18px; right: 12%; width: 3px; height: 0; z-index: 0; pointer-events: none; }
+.incense { position: fixed; top: 14px; right: 14%; width: 4px; height: 0; z-index: 0; pointer-events: none; }
 .incense::before, .incense::after {
   content: ''; position: absolute; left: 0; bottom: 0; width: 100%; border-radius: 50%;
-  background: rgba(160,150,130,0.35); filter: blur(3px);
+  background: rgba(150,140,120,0.45); filter: blur(2.5px);
 }
-.incense::before { height: 18px; animation: incense1 4s ease-out infinite; }
-.incense::after  { height: 14px; animation: incense2 3.5s ease-out 1.5s infinite; }
+.incense::before { height: 22px; animation: incense1 4s ease-out infinite; }
+.incense::after  { height: 16px; animation: incense2 3.5s ease-out 1.5s infinite; }
 
 /* 光影斑驳 */
 @keyframes dappledShift { 0% { background-position: 0% 0%, 100% 100%, 50% 60%; } 100% { background-position: 4% 2%, 96% 98%, 52% 58%; } }
 .dappled-light {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background:
-    radial-gradient(ellipse 160px 100px at 22% 28%, rgba(255,255,220,0.05) 0%, transparent 100%),
-    radial-gradient(ellipse 120px 80px at 68% 42%, rgba(255,255,220,0.04) 0%, transparent 100%),
-    radial-gradient(ellipse 180px 120px at 48% 18%, rgba(255,255,240,0.04) 0%, transparent 100%);
+    radial-gradient(ellipse 160px 100px at 22% 28%, rgba(255,255,220,0.1) 0%, transparent 100%),
+    radial-gradient(ellipse 120px 80px at 68% 42%, rgba(255,255,220,0.08) 0%, transparent 100%),
+    radial-gradient(ellipse 180px 120px at 48% 18%, rgba(255,255,240,0.08) 0%, transparent 100%);
   animation: dappledShift 20s ease-in-out infinite alternate;
 }
 
@@ -140,6 +146,34 @@ body::after {
 @keyframes rainFall { 0% { transform: translateY(-50px); opacity: 0; } 4% { opacity: 0.2; } 96% { opacity: 0.1; } 100% { transform: translateY(100vh); opacity: 0; } }
 .rain-layer { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; display: none; }
 .rain-layer.active { display: block; }
+
+/* 暖阳 */
+.sun {
+  position: fixed; top: 5%; right: 18%; width: 64px; height: 64px; z-index: 0; pointer-events: none;
+  background: radial-gradient(circle, rgba(255,245,220,0.7) 0%, rgba(255,230,180,0.3) 40%, transparent 70%);
+  border-radius: 50%; filter: blur(4px);
+  animation: sunGlow 8s ease-in-out infinite alternate;
+}
+@keyframes sunGlow {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.08); }
+}
+
+/* 飞鸟 */
+@keyframes birdFly1 { 0% { transform: translate(0, 0); } 25% { transform: translate(80px, -15px); } 50% { transform: translate(160px, -5px); } 75% { transform: translate(240px, -20px); } 100% { transform: translate(320px, 0); } }
+.bird {
+  position: fixed; z-index: 0; pointer-events: none;
+  width: 14px; height: 6px;
+}
+.bird::before, .bird::after {
+  content: ''; position: absolute; top: 0; height: 100%;
+  border-radius: 50%;
+  background: rgba(80,90,80,0.25);
+}
+.bird::before { left: 0; width: 50%; transform: rotate(-20deg); }
+.bird::after  { right: 0; width: 50%; transform: rotate(20deg); }
+.bird-1 { top: 12%; left: 15%; animation: birdFly1 18s linear infinite; }
+.bird-2 { top: 18%; left: 55%; animation: birdFly1 22s linear -6s infinite; animation-direction: reverse; }
 
 /* ===== 标题 ===== */
 .header { text-align: center; padding-top: 8px; }
@@ -233,6 +267,7 @@ body::after {
 }
 .tile .tile-icon { width: 52%; height: 52%; display: flex; align-items: center; justify-content: center; }
 .tile .tile-icon svg { width: 100%; height: 100%; display: block; }
+.tile .tile-icon svg [stroke] { stroke-width: 2.4; }
 .tile .tile-name { font-size: 0.68em; font-weight: 700; letter-spacing: 0.5px; line-height: 1.2; text-align: center; }
 .tile .tile-lv { position: absolute; top: 2px; right: 4px; font-size: 7px; opacity: 0.45; letter-spacing: 0.5px; }
 
@@ -410,6 +445,9 @@ body::after {
   <div class="mist mist-2"></div>
   <div class="mist mist-3"></div>
 </div>
+<div class="sun"></div>
+<div class="bird bird-1"></div>
+<div class="bird bird-2"></div>
 <div class="water-surface"></div>
 <div class="incense"></div>
 <div class="dappled-light"></div>
